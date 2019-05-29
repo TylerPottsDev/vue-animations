@@ -4,7 +4,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <transition name="view" appear enter-active-class="animated zoomInRight delay" leave-active-class="animated zoomOutLeft">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -27,5 +29,8 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.delay {
+  animation-delay: .5s;
 }
 </style>
